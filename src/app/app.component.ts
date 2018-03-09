@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  intervalsOdd: number[] = [];
+  intervalsEven: number[] = [];
+
+  onIntervalReceived(interval: number) {
+    if(interval % 2 == 0) {
+      this.intervalsEven.push(interval);
+    } else {
+      this.intervalsOdd.push(interval);
+    }
+  }
 }
